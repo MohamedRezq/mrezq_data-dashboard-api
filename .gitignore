@@ -1,0 +1,44 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# Build artifacts
+dist/
+build/
+out/
+.DS_Store
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# Compiled output
+# *.js
+# *.jsx
+# *.ts
+# *.tsx
+# *.json
+
+# Testing files
+coverage/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Empty folders
+!**/.gitkeep
