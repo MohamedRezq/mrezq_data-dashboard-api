@@ -1,16 +1,16 @@
-const { Model } = require('sequelize');
+const { Model } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
   class Subscription extends Model {
     static associate(models) {
       Subscription.belongsTo(models.Organization, {
-        foreignKey: 'organization_id',
-        as: 'organization',
+        foreignKey: "organization_id",
+        as: "organization",
       });
 
       Subscription.belongsTo(models.OrganizationApplication, {
-        foreignKey: 'organization_application_id',
-        as: 'organization_application',
+        foreignKey: "organization_application_id",
+        as: "organization_application",
       });
     }
   }
@@ -21,24 +21,44 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'organizations',
-          key: 'id',
+          model: "organizations",
+          key: "id",
         },
       },
       organization_application_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'organization_applications',
-          key: 'id',
+          model: "organization_applications",
+          key: "id",
         },
+      },
+      subscription_id: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      vendor_id: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      vendor_category: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: "application_categories",
+          key: "id",
+        },
+      },
+      vendor_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
       },
       data_source: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
       data_source_type: {
-        type: DataTypes.ENUM('finance_app', 'self', 'hr_app'),
+        type: DataTypes.ENUM("finance_app", "self", "hr_app"),
         allowNull: true,
       },
       license_count: {
@@ -50,7 +70,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       payment_type: {
-        type: DataTypes.ENUM('upfront', 'recurring'),
+        type: DataTypes.ENUM("upfront", "recurring"),
         allowNull: true,
       },
       total_contract_value: {
@@ -58,7 +78,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       renewal_status: {
-        type: DataTypes.ENUM('upcoming', 'due', 'discarded', 'paid'),
+        type: DataTypes.ENUM("upcoming", "due", "discarded", "paid"),
         allowNull: true,
       },
       renewal_start_date: {
@@ -90,8 +110,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'Subscription',
-      tableName: 'subscriptions',
+      modelName: "Subscription",
+      tableName: "subscriptions",
       underscored: true,
       paranoid: true,
     }

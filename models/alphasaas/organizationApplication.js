@@ -1,16 +1,16 @@
-const { Model } = require('sequelize');
+const { Model } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
   class OrganizationApplication extends Model {
     static associate(models) {
       OrganizationApplication.belongsTo(models.Organization, {
-        foreignKey: 'organization_id',
-        as: 'organization',
+        foreignKey: "organization_id",
+        as: "organization",
       });
 
       OrganizationApplication.belongsTo(models.Application, {
-        foreignKey: 'application_id',
-        as: 'application',
+        foreignKey: "application_id",
+        as: "application",
       });
     }
   }
@@ -21,24 +21,32 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'organizations',
-          key: 'id',
+          model: "organizations",
+          key: "id",
         },
       },
       application_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'applications',
-          key: 'id',
+          model: "applications",
+          key: "id",
         },
       },
+      vendor_name: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      vendor_id: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
       integration_status: {
-        type: DataTypes.ENUM('pending', 'active', 'disabled', 'error'),
-        defaultValue: 'pending',
+        type: DataTypes.ENUM("pending", "active", "disabled", "error"),
+        defaultValue: "pending",
       },
       data: {
-        type: DataTypes.TEXT('long'),
+        type: DataTypes.TEXT("long"),
         allowNull: true,
       },
       active: {
@@ -62,8 +70,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'OrganizationApplication',
-      tableName: 'organization_applications',
+      modelName: "OrganizationApplication",
+      tableName: "organization_applications",
       underscored: true,
       paranoid: true,
     }

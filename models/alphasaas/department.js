@@ -1,7 +1,7 @@
 // models/department.js
 module.exports = (sequelize, DataTypes) => {
     const Department = sequelize.define(
-      'Department',
+      "Department",
       {
         id: {
           type: DataTypes.INTEGER,
@@ -12,9 +12,17 @@ module.exports = (sequelize, DataTypes) => {
           type: DataTypes.INTEGER,
           allowNull: false,
           references: {
-            model: 'Organizations',
-            key: 'id',
+            model: "Organizations",
+            key: "id",
           },
+        },
+        department_id: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        head_id: {
+          type: DataTypes.STRING,
+          allowNull: true,
         },
         name: {
           type: DataTypes.STRING,
@@ -42,7 +50,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       {
-        tableName: 'departments',
+        tableName: "departments",
         underscored: true,
         timestamps: false,
       }

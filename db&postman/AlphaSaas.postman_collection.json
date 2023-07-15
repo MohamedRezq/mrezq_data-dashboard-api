@@ -1,0 +1,1413 @@
+{
+	"info": {
+		"_postman_id": "62420a9c-b41f-4643-a678-fc4ab9f2330e",
+		"name": "AlphaSaas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Application Categories",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Marketing\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/application_categories",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"application_categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_dev}}/api/application_categories",
+							"host": [
+								"{{base_url_dev}}"
+							],
+							"path": [
+								"api",
+								"application_categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/application-categories/2",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"application-categories",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Finance\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/application-categories/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"application-categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Finance\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/application-categories/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"application-categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Applications",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Finance\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/applications",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_dev}}/api/applications",
+							"host": [
+								"{{base_url_dev}}"
+							],
+							"path": [
+								"api",
+								"applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/applications/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"applications",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Zoho Books\",\n    \"description\": \"An accounting software package\",\n    \"category_id\": 1,\n    \"logo_url\": \"https://example.com/logo.png\",\n    \"active\": true\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/applications/2",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"applications",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Finance\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/applications/2",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"applications",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Organizations",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Sample Organization\",\n    \"address\": \"123 Main St\",\n    \"phone\": \"555-555-1234\",\n    \"contact_person\": \"John Doe\",\n    \"logo_url\": \"https://example.com/logo.png\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/organizations",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"organizations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_dev}}/api/organizations",
+							"host": [
+								"{{base_url_dev}}"
+							],
+							"path": [
+								"api",
+								"organizations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/organizations/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"organizations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"QuickBooks\",\n    \"description\": \"An accounting software package\",\n    \"category_id\": 1,\n    \"logo_url\": \"https://example.com/logo.png\",\n    \"active\": true\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/organizations/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"organizations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Finance\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/organizations/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"organizations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscriptions",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"organization_id\": 1,\n    \"organization_application_id\": 1,\n    \"data_source\": 1,\n    \"data_source_type\": \"self\",\n    \"license_count\": 10,\n    \"license_type\": \"monthly\", //monthly, annually\n    \"payment_type\": \"upfront\",\n    \"total_contract_value\": 1000,\n    \"renewal_status\": \"upcoming\",\n    \"renewal_start_date\": \"2023-06-01\",\n    \"renewal_end_date\": \"2023-12-01\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/subscriptions",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/subscriptions",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/subscriptions/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"subscriptions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"organization_id\": 1,\n    \"organization_application_id\": 1,\n    \"data_source\": 1,\n    \"data_source_type\": \"self\",\n    \"license_count\": 10,\n    \"license_type\": \"basic\",\n    \"payment_type\": \"upfront\",\n    \"total_contract_value\": 1000,\n    \"renewal_status\": \"upcoming\",\n    \"renewal_start_date\": \"2023-06-01\",\n    \"renewal_end_date\": \"2023-12-01\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/subscriptions/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"subscriptions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Finance\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/subscriptions/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"subscriptions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sync Log",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organization_id\": 1,\n    \"organization_application_id\": 1,\n    \"sync_target\": \"finance\",\n    \"sync_type\": \"manual\",\n    \"sync_status\": \"pending\",\n    \"message\": \"\",\n    \"start_time\": \"2023-06-01T10:00:00.000Z\",\n    \"end_time\": null\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/sync_log",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"sync_log"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/sync_log",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"sync_log"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/sync_log/2",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"sync_log",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organization_id\": 1,\n    \"organization_application_id\": 1,\n    \"sync_status\": \"success\",\n    \"end_time\": \"2023-06-01T10:00:00.000Z\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/sync_log/2",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"sync_log",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Finance\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/sync_log/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"sync_log",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Organization Applications",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"organization_id\": 1,\n  \"application_id\": 1\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/organization_applications",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"organization_applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/organization_applications",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"organization_applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/organization_applications/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"organization_applications",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": \"QuickBooks\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/organization_applications/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"organization_applications",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Finance\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/organization_applications/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"organization_applications",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Departments",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organization_id\": 1,\n    \"name\": \"HR\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/departments",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/departments",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/departments/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"departments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organization_id\": 1,\n    \"name\": \"HR\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/departments/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"departments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/departments/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"departments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organization_id\": 1,\n    \"name\": \"HR\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/users",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/departments",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/departments/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"departments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organization_id\": 1,\n    \"name\": \"HR\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/departments/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"departments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/departments/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"departments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "QuickBooks",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organization_id\": 1,\n    \"name\": \"HR\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/departments",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/quickbooks/authenticate",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"quickbooks",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Callback",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/quickbooks/callback",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"quickbooks",
+								"callback"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organization_id\": 1,\n    \"name\": \"HR\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/departments/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"departments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/departments/1",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"departments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Zoho People",
+			"item": []
+		},
+		{
+			"name": "Jira",
+			"item": []
+		},
+		{
+			"name": "Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://data.g2.com/api/v1/products",
+					"protocol": "https",
+					"host": [
+						"data",
+						"g2",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url_local",
+			"value": "http://localhost:3752",
+			"type": "default"
+		},
+		{
+			"key": "base_url_dev",
+			"value": "https://alphasaas-api.herokuapp.com",
+			"type": "default"
+		}
+	]
+}

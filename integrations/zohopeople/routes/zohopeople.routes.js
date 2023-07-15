@@ -1,8 +1,8 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-
 // Import Controller ---------------------------------------------//
-const controller = require("../controllers/quickbooks.controller");
+const controller = require('../controllers/zohopeople.controller');
+
 
 //----------------------------------------------------------------//
 router.post("/exchange-code", controller.handleCodeExchange);
