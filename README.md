@@ -111,3 +111,47 @@ This API is licensed under the [ISC License ↗](https://opensource.org/licenses
 ## Contact
 
 If you have any questions or feedback about this API, please feel free to contact us at [mrezq.dev@gmail.com](mailto:mrezq.dev@gmail.com). We'd love to hear from you!
+
+## Badges
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
+
+## 🚀 About Me
+
+Talented and experienced Full Stack Web Developer with 3 years of freelance basis experience in MERN stack.
+
+## 🛠 Skills
+
+> > Programming Languages:
+
+- ✅ JavaScript
+- ✅ TypeScript
+
+> > Front-end Skills:
+
+- ✅ React.js
+- ✅ Next.js
+- ✅ Gatsby
+- ✅ Redux-Toolkit
+- ✅ GraphQL
+- ✅ HTML5 | CSS3 | Sass | jQuery
+- ✅ Bootstrap | Tailwind | Material-UI
+
+> > Back-end Skills:
+
+- ✅ Node.js | Express.js | MVC Architecture
+- ✅ Restful API Development and Testing
+- ✅ SQL | MySQL | PostgreSQL
+- ✅ NoSQL | MongoDB
+- ✅ AWS (EC2 | S3)
+- ✅ Postman
+- ✅ GraphQL Apollo Server
+
+> > E-Commerce Skills:
+
+- ✅ Stripe
+- ✅ Shopify
+- ✅ BigCommerce
+- ✅ CMS (Prismic | Contentful | Sanity)
