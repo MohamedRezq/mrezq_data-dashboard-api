@@ -1,7 +1,7 @@
 // models/user.js
 module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define(
-      'User',
+      "User",
       {
         id: {
           type: DataTypes.INTEGER,
@@ -30,14 +30,18 @@ module.exports = (sequelize, DataTypes) => {
           allowNull: true,
         },
         role: {
-          type: DataTypes.ENUM('superadmin', 'admin', 'member'),
+          type: DataTypes.ENUM("superadmin", "admin", "member"),
           allowNull: false,
-          defaultValue: 'admin',
+          defaultValue: "admin",
         },
         active: {
           type: DataTypes.BOOLEAN,
           allowNull: false,
           defaultValue: 1,
+        },
+        data: {
+          type: DataTypes.TEXT("long"),
+          allowNull: true,
         },
         created_at: {
           type: DataTypes.DATE,
@@ -56,7 +60,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       {
-        tableName: 'users',
+        tableName: "users",
         timestamps: false,
         underscored: true,
       }

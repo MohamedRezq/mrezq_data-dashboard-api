@@ -208,6 +208,7 @@ CREATE TABLE `users` (
   `last_name` varchar(255) DEFAULT NULL,
   `role` enum('superadmin','admin','member') NOT NULL DEFAULT 'admin',
   `active` tinyint(1) NOT NULL DEFAULT 1,
+  `data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`data`)),
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` datetime DEFAULT NULL,
@@ -216,11 +217,11 @@ CREATE TABLE `users` (
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`organization_id`) REFERENCES `organizations` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `users` (`id`,`organization_id`, `email`, `password`, `first_name`, `last_name`,`role`) VALUES
-(1, 1 ,	'admin1@gmail.com',	'$2a$10$ulh.ucYizWLgGLg6arGJ8OUToBfYGs.ygdJ2vDytQbGFlC0/0snsW',	'Amr',	'Hammdalla', 'admin'),
-(2, 2 ,	'admin2@gmail.com',	'$2a$10$ulh.ucYizWLgGLg6arGJ8OUToBfYGs.ygdJ2vDytQbGFlC0/0snsW',	'Amr',	'Hammdalla', 'admin'),
-(3, 3 ,	'admin3@gmail.com',	'$2a$10$ulh.ucYizWLgGLg6arGJ8OUToBfYGs.ygdJ2vDytQbGFlC0/0snsW',	'Amr',	'Hammdalla', 'admin'),
-(4, 1 ,	'member1@gmail.com',	'$2a$10$ulh.ucYizWLgGLg6arGJ8OUToBfYGs.ygdJ2vDytQbGFlC0/0snsW',	'Amr',	'Hammdalla','member');
+INSERT INTO `users` (`id`,`organization_id`, `email`, `password`, `first_name`, `last_name`,`role`,`data`) VALUES
+(1, 1 ,	'admin1@gmail.com',	'$2a$10$ulh.ucYizWLgGLg6arGJ8OUToBfYGs.ygdJ2vDytQbGFlC0/0snsW',	'Amr',	'Hammdalla', 'admin',null),
+(2, 2 ,	'admin2@gmail.com',	'$2a$10$ulh.ucYizWLgGLg6arGJ8OUToBfYGs.ygdJ2vDytQbGFlC0/0snsW',	'Amr',	'Hammdalla', 'admin',null),
+(3, 3 ,	'admin3@gmail.com',	'$2a$10$ulh.ucYizWLgGLg6arGJ8OUToBfYGs.ygdJ2vDytQbGFlC0/0snsW',	'Amr',	'Hammdalla', 'admin',null),
+(4, 1 ,	'member1@gmail.com','$2a$10$ulh.ucYizWLgGLg6arGJ8OUToBfYGs.ygdJ2vDytQbGFlC0/0snsW',	'Amr',	'Hammdalla','member',null);
 -- 2023-06-03 12:03:33
 
 

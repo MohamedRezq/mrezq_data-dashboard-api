@@ -75,11 +75,12 @@ exports.loginUser = async (req, res) => {
         lastName: user.last_name,
         role: user.role,
         active: user.active,
+        data: { ...JSON.parse(user.data), oktaClientSecret: null },
         applications: user.role !== "member" ? applications : [],
-        description: `1- if user is admin, then the applications array will contain the applications.
-          2- if user is member, then applications array will be empty and user must be navigated to dashboard directly, because members can't choose applications only admins can.
-          3- if admin, check status of each application, if any application is authenticated, so no more authentication needed, then display connected for this application in frontend and leave other applications with connect button
-          4- if all applications are authenticated, then admins must be directed to dashboard`,
+        // description: `1- if user is admin, then the applications array will contain the applications.
+        //   2- if user is member, then applications array will be empty and user must be navigated to dashboard directly, because members can't choose applications only admins can.
+        //   3- if admin, check status of each application, if any application is authenticated, so no more authentication needed, then display connected for this application in frontend and leave other applications with connect button
+        //   4- if all applications are authenticated, then admins must be directed to dashboard`,
       },
       JWT.jwtsecretkey
     );
@@ -118,51 +119,52 @@ exports.createUser = async (req, res) => {
 //--------------------------------------------------------------//
 exports.getUser = async (req, res) => {
   try {
-    const { token }  = req.body;
+    let { token } = req.body;
     const decoded = jwt.verify(token, JWT.jwtsecretkey);
-    if (decoded) {
-      const user = await User.findByPk(decoded.id);
-      if (user) {
-        //---------------------------------------------------------//
-        //get all applications for single organization
-        let applications = [];
-        if (user.role !== "member") {
-          try {
-            applications = await OrganizationApplication.findAll({
-              where: {
-                organization_id: user.organization_id,
-              },
-            });
-            if (applications.length > 0) {
-              applications.map((application, index) => {
-                applications[index] = {
-                  organization_id: application.organization_id,
-                  application_id: application.application_id,
-                  integration_status: application.integration_status,
-                };
-              });
-            }
-          } catch (error) {
-            return res.status(500).send("Internal server error");
-          }
-        }
-        const token = jwt.sign(
-          {
-            organizationId: user.organization_id,
-            email: user.email,
-            firstName: user.first_name,
-            lastName: user.last_name,
-            role: user.role,
-            active: user.active,
-            applications: user.role !== "member" ? applications : [],
+    if (!decoded) {
+      return res.status(400).send({ message: "Wrong token provided" });
+    }
+    const user = await User.findByPk(decoded.id);
+    if (!user) {
+      res.status(404).json({ error: "User not found" });
+    }
+    //---------------------------------------------------------//
+    //get all applications for single organization
+    let applications = [];
+    if (user.role !== "member") {
+      try {
+        applications = await OrganizationApplication.findAll({
+          where: {
+            organization_id: user.organization_id,
           },
-          JWT.jwtsecretkey
-        );
-        return res.status(200).json({ token: token });
-      } else {
-        res.status(404).json({ error: "User not found" });
+        });
+        if (applications.length > 0) {
+          applications.map((application, index) => {
+            applications[index] = {
+              organization_id: application.organization_id,
+              application_id: application.application_id,
+              integration_status: application.integration_status,
+            };
+          });
+        }
+      } catch (error) {
+        return res.status(500).send("Internal server error");
       }
     }
+    token = jwt.sign(
+      {
+        organizationId: user.organization_id,
+        email: user.email,
+        firstName: user.first_name,
+        lastName: user.last_name,
+        role: user.role,
+        active: user.active,
+        data: { ...JSON.parse(user.data), oktaClientSecret: null },
+        applications: user.role !== "member" ? applications : [],
+      },
+      JWT.jwtsecretkey
+    );
+    return res.status(200).json({ token: token });
   } catch (error) {
     return res.status(500).send("Internal server error");
   }
